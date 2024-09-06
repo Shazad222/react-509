@@ -1,0 +1,129 @@
+/* Container for the Signup form */
+.signup-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Add subtle shadow on hover */
+.signup-container:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styling */
+.signup-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Form field styling */
+.signup-container div {
+    margin-bottom: 20px;
+}
+
+.signup-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Input and select field styling */
+.signup-container input,
+.signup-container select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Change border color and add shadow on focus */
+.signup-container input:focus,
+.signup-container select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Specific input types styling */
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"],
+.signup-container input[type="tel"] {
+    margin-bottom: 14px;
+}
+
+/* Error message styling */
+.signup-container p.error {
+    color: #d9534f;
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+/* Button styling */
+.signup-container button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Hover effect for buttons */
+.signup-container button:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional styles for the "Go to Login" link button */
+.signup-container .link-button {
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hover effect for the link button */
+.signup-container .link-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive form - mobile view */
+@media (max-width: 600px) {
+    .signup-container {
+        padding: 20px;
+    }
+
+    .signup-container h1 {
+        font-size: 24px;
+    }
+
+    .signup-container button,
+    .signup-container .link-button {
+        font-size: 14px;
+    }
+}
