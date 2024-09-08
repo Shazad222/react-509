@@ -112,7 +112,8 @@ button:hover {
 /* Change border color and add shadow on focus */
 .signup-container input:focus,
 .signup-container select:focus {
-    border-color: #007bff;
+    border-color: #4CAF50;
+    ;
     outline: none;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
@@ -154,7 +155,8 @@ button:hover {
 
 /* Additional styles for the "Go to Login" link button */
 .signup-container .link-button {
-    background-color: #007bff;
+    background-color: #4CAF50;
+
     color: #fff;
     margin-top: 10px;
     padding: 14px;

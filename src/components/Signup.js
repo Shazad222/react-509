@@ -133,7 +133,6 @@ const Signup = () => {
     return (
         <div className="signup-container">
             <form onSubmit={handleSubmit}>
-                <button className="link-button" type="button" onClick={gotoLogin}>Go to Login</button>
                 <input
                     type="text"
                     placeholder="Username"
@@ -169,6 +168,7 @@ const Signup = () => {
                 />
                 <button type="submit">Sign Up</button>
             </form>
+            <button className="link-button" type="button" onClick={gotoLogin}>Go to Login</button>
 
             {/* Display the message below the form */}
             {message && <p className="message">{message}</p>}
