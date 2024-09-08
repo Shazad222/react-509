@@ -1,25 +1,19 @@
-// src/components/Home.js
 import React, { useEffect, useState } from 'react';
-import { fetchUserData } from '../controllers/userController';
 
 const Home = () => {
     const [userData, setUserData] = useState(null);
 
     useEffect(() => {
-        const loadData = async () => {
-            const data = await fetchUserData();
-            setUserData(data);
-        };
-        loadData();
+        // Get user data from localStorage
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUserData(JSON.parse(storedUser));
+        }
     }, []);
 
     const handleLogout = () => {
         localStorage.removeItem('user');
         window.location.href = '/login';
-    };
-
-    const handleUpload = () => {
-        alert('Upload button clicked');
     };
 
     return (
@@ -30,8 +24,9 @@ const Home = () => {
                     <img src="profile-pic-placeholder.jpg" alt="Profile" className="profile-pic" />
                     <p>Name: {userData.username}</p>
                     <p>Email: {userData.email}</p>
+                    <p>Phone Number: {userData.phone_number}</p>
+                    <p>Gender: {userData.gender}</p>
                     <button onClick={handleLogout}>Logout</button>
-                    <button onClick={handleUpload} className="upload-button">Upload</button>
                 </div>
             ) : (
                 <p>Loading...</p>

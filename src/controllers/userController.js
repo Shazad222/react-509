@@ -1,11 +1,3 @@
-// // src/controllers/userController.js
-// import { getUserData } from '../models/userModel';
-
-// export const fetchUserData = () => {
-//     return getUserData();
-// };
-
-// src/controllers/userController.js
 export const fetchUserData = async () => {
     try {
         const response = await fetch('http://localhost:5000/user', {
