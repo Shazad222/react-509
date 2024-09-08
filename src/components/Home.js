@@ -40,8 +40,61 @@
 
 // export default Home;
 
+// import React, { useEffect, useState } from 'react';
+// import "../styles/Home.css";
+
+// const Home = () => {
+//     const [userData, setUserData] = useState(null);
+
+//     useEffect(() => {
+//         const storedUser = localStorage.getItem('user');
+//         if (storedUser) {
+//             setUserData(JSON.parse(storedUser));
+//         }
+//     }, []);
+
+//     const handleLogout = () => {
+//         localStorage.removeItem('user');
+//         window.location.href = '/login';
+//     };
+
+//     const handleUpload = () => {
+//         alert('Upload button clicked');
+//     };
+
+//     return (
+//         <div className="home-layout">
+//             {/* Left Sidebar for User Data */}
+//             <div className="sidebar">
+//                 {userData ? (
+//                     <div className="profile-info">
+//                         <p><strong>Name:</strong> {userData.username}</p>
+//                         <p><strong>Email:</strong> {userData.email}</p>
+//                         <p><strong>Phone Number:</strong> {userData.phone_number}</p>
+//                         <p><strong>Gender:</strong> {userData.gender}</p>
+//                     </div>
+//                 ) : (
+//                     <p>Loading user data...</p>
+//                 )}
+//             </div>
+
+//             {/* Main content for Upload Button */}
+//             <div className="content">
+//                 <button className="upload-button" onClick={handleUpload}>Upload File</button>
+//             </div>
+
+//             {/* Logout Button at the top-right */}
+//             <button className="logout-button" onClick={handleLogout}>Logout</button>
+//         </div>
+//     );
+// };
+
+// export default Home;
+
+
 import React, { useEffect, useState } from 'react';
 import "../styles/Home.css";
+import FileUpload from './FileUpload'; // Import the FileUpload component
 
 const Home = () => {
     const [userData, setUserData] = useState(null);
@@ -56,10 +109,6 @@ const Home = () => {
     const handleLogout = () => {
         localStorage.removeItem('user');
         window.location.href = '/login';
-    };
-
-    const handleUpload = () => {
-        alert('Upload button clicked');
     };
 
     return (
@@ -78,9 +127,9 @@ const Home = () => {
                 )}
             </div>
 
-            {/* Main content for Upload Button */}
+            {/* Main content for File Upload */}
             <div className="content">
-                <button className="upload-button" onClick={handleUpload}>Upload File</button>
+                <FileUpload /> {/* This is where the file upload will be rendered */}
             </div>
 
             {/* Logout Button at the top-right */}
