@@ -160,6 +160,16 @@ app.post('/upload', upload.single('file'), async (req, res) => {
     }
 });
 
+// Route to fetch all uploaded files
+app.get('/files', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM file_user ORDER BY upload_date DESC');
+        res.status(200).json(result.rows);
+    } catch (error) {
+        console.error('Error fetching files:', error);
+        res.status(500).json({ message: 'Error fetching files' });
+    }
+});
 
 
 // Serve static files from the uploads folder
